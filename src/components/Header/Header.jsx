@@ -14,6 +14,7 @@ import Context from "../../utils/context";
 import "./Header.scss";
 const Header = () => {
     const [scrolledPD, setScrolledPD] = useState(false);
+    const [showCart, setShowCart] = useState(false);
     const handleScrollPD = () => {
         const offsetPD = window.scrollY;
         if(offsetPD > 200) {
@@ -25,24 +26,28 @@ const Header = () => {
     useEffect(() => {
         window.addEventListener("scroll", handleScrollPD);
     });
-    return <header className={`main-header ${ scrolledPD ? 'sticky-header' : ''}`}>
+    return <>
+
+    <header className={`main-header ${ scrolledPD ? 'sticky-header' : ''}`}>
         <div className="header-content">
             <ul className="left">
                 <li>Home</li>
                 <li>About</li>
                 <li>Categories</li>
             </ul>
-            <div className="center">Pradipta Store 2.26hr</div>
+            <div className="center">Pradipta Store 2.59hrs</div>
             <div className="right">
                 <TbSearch />
                 <AiOutlineHeart />
-                <span className="cart-icon">
+                <span className="cart-icon" onClick={() => setShowCart(true)}>
                     <CgShoppingCart />
                     <span>4</span>
                 </span>
             </div>
         </div>
-    </header>;
+    </header>
+    {showCart && <Cart setShowCart={setShowCart} />}
+    </>;
 };
 
 export default Header;

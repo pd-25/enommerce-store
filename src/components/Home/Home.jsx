@@ -8,7 +8,7 @@ const Home = () => {
         <div className="main-content">
             <div className="layout">
             <Category />
-            <Products />
+            <Products headerText="Popular products" />
             </div>
         </div>
     </div>;
