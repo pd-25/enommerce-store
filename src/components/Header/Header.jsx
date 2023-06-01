@@ -35,7 +35,7 @@ const Header = () => {
                 <li>About</li>
                 <li>Categories</li>
             </ul>
-            <div className="center">Pradipta Store 2.59hrs</div>
+            <div className="center">Pradipta Store 3.12hrs</div>
             <div className="right">
                 <TbSearch />
                 <AiOutlineHeart />
